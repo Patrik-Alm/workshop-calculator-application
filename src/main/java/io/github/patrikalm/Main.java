@@ -8,7 +8,11 @@ public class Main {
         char choice = '\u0000';
         Scanner scanner = new Scanner(System.in);
 
+
+
         while (choice != 'e' && choice != 'E') {
+
+            start :
 
             choice = MenuChoice.menuChoice();
 
@@ -16,15 +20,23 @@ public class Main {
 
                 if (CheckMenuChoice.checkMenuChoice(choice)) {
 
-                    double x, y;
+                    double x =0,y = 0;
 
-                    System.out.println();
-                    System.out.print("Enter your first number: ");
-                    x = scanner.nextDouble();
-                    System.out.println();
-                    System.out.print("Enter your second number: ");
-                    y = scanner.nextDouble();
-                    System.out.println();
+                    try {
+                        System.out.println();
+                        System.out.print("Enter your first number: ");
+                        x = scanner.nextDouble();
+                        System.out.println();
+                        System.out.print("Enter your second number: ");
+                        y = scanner.nextDouble();
+                        System.out.println();
+                    }
+                    catch (Exception e) {
+                        System.out.println();
+                        System.out.println("Something went wrong. Did you use , instead of . ?");
+                        System.out.println();
+                        System.out.println("Please try again.");
+                    }
 
                     if (choice != '/' && y != 0) {
 
@@ -55,8 +67,10 @@ public class Main {
 
                         }
                     } else {
+                        System.out.println();
                         System.out.println("The second number can not be 0. Please try again.");
                     }
+
                 }
                 else {
                     System.out.println();
