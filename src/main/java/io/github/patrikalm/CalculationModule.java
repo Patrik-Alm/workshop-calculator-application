@@ -2,23 +2,23 @@ package io.github.patrikalm;
 
 public class CalculationModule {
 
-    static int addition(int x, int y) {
+    static double addition(double x, double y) {
 
         return x + y;
 
     }
 
-    static int subtraction(int x, int y) {
+    static double subtraction(double x, double y) {
 
         return x - y;
     }
 
-    static int multiplication(int x, int y){
+    static double multiplication(double x, double y){
 
         return x * y;
     }
 
-    static int division(int x, int y) {
+    static double division( double x, double y) {
 
         return x / y;
     }
