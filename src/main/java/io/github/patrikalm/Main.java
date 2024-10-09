@@ -14,41 +14,53 @@ public class Main {
 
             if (choice != 'e' && choice != 'E') {
 
-                int x,y;
+                if (CheckMenuChoice.checkMenuChoice(choice)) {
 
-                System.out.println();
-                System.out.print("Enter your first number: ");
-                x = scanner.nextInt();
-                System.out.println();
-                System.out.print("Enter your second number: ");
-                y = scanner.nextInt();
-                System.out.println();
+                    double x, y;
 
-                switch (choice) {
+                    System.out.println();
+                    System.out.print("Enter your first number: ");
+                    x = scanner.nextDouble();
+                    System.out.println();
+                    System.out.print("Enter your second number: ");
+                    y = scanner.nextDouble();
+                    System.out.println();
 
-                    case '+':
-                        System.out.print(x + " added with " + y + " is: ");
-                        System.out.println(CalculationModule.addition(x, y));
-                        break;
+                    if (choice != '/' && y != 0) {
 
-                    case '-':
-                        System.out.print(x + " subtracted with " + y + " is: ");
-                        System.out.println(CalculationModule.subtraction(x, y));
-                        break;
+                        switch (choice) {
 
-                    case '*':
-                        System.out.print(x + " multiplied with " + y + " is: ");
-                        System.out.println(CalculationModule.multiplication(x, y));
-                        break;
+                            case '+':
+                                System.out.print(x + " added with " + y + " is: ");
+                                System.out.println(CalculationModule.addition(x, y));
+                                break;
 
-                    case '/':
-                        System.out.print(x + " divided with " + y + " is: ");
-                        System.out.println(CalculationModule.division(x, y));
-                        break;
+                            case '-':
+                                System.out.print(x + " subtracted with " + y + " is: ");
+                                System.out.println(CalculationModule.subtraction(x, y));
+                                break;
 
-                    default:
-                        break;
+                            case '*':
+                                System.out.print(x + " multiplied with " + y + " is: ");
+                                System.out.println(CalculationModule.multiplication(x, y));
+                                break;
 
+                            case '/':
+                                System.out.print(x + " divided with " + y + " is: ");
+                                System.out.println(CalculationModule.division(x, y));
+                                break;
+
+                            default:
+                                break;
+
+                        }
+                    } else {
+                        System.out.println("The second number can not be 0. Please try again.");
+                    }
+                }
+                else {
+                    System.out.println();
+                    System.out.println("You have to choose one of the operands or the exit.");
                 }
             }
             else {
