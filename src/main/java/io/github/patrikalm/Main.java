@@ -14,7 +14,7 @@ public class Main {
 
             if (choice != 'e' && choice != 'E') {
 
-                int x,y;
+                int x, y;
 
                 System.out.println();
                 System.out.print("Enter your first number: ");
@@ -24,31 +24,37 @@ public class Main {
                 y = scanner.nextInt();
                 System.out.println();
 
-                switch (choice) {
+                if (choice != '/' && y != 0) {
 
-                    case '+':
-                        System.out.print(x + " added with " + y + " is: ");
-                        System.out.println(CalculationModule.addition(x, y));
-                        break;
+                    switch (choice) {
 
-                    case '-':
-                        System.out.print(x + " subtracted with " + y + " is: ");
-                        System.out.println(CalculationModule.subtraction(x, y));
-                        break;
+                        case '+':
+                            System.out.print(x + " added with " + y + " is: ");
+                            System.out.println(CalculationModule.addition(x, y));
+                            break;
 
-                    case '*':
-                        System.out.print(x + " multiplied with " + y + " is: ");
-                        System.out.println(CalculationModule.multiplication(x, y));
-                        break;
+                        case '-':
+                            System.out.print(x + " subtracted with " + y + " is: ");
+                            System.out.println(CalculationModule.subtraction(x, y));
+                            break;
 
-                    case '/':
-                        System.out.print(x + " divided with " + y + " is: ");
-                        System.out.println(CalculationModule.division(x, y));
-                        break;
+                        case '*':
+                            System.out.print(x + " multiplied with " + y + " is: ");
+                            System.out.println(CalculationModule.multiplication(x, y));
+                            break;
 
-                    default:
-                        break;
+                        case '/':
+                            System.out.print(x + " divided with " + y + " is: ");
+                            System.out.println(CalculationModule.division(x, y));
+                            break;
 
+                        default:
+                            break;
+
+                    }
+                }
+                else {
+                    System.out.println("The second number can not be 0. Please try again.");
                 }
             }
             else {
